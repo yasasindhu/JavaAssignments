@@ -11,6 +11,10 @@ public class Main {
         } else {
             System.out.println("Is not a pangram");
         }
+        FileMatch fileMatch=new FileMatch();
+        List<String> resultantFiles=fileMatch.searchFiles();
+        for(String files:resultantFiles)
+            System.out.println(files);
     }
 
 }

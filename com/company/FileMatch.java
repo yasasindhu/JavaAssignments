@@ -7,14 +7,15 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class FileMatch {
-    public List<String> searchFiles() {
+    public List<String> searchFiles(String inputFileName) {
         List<String> resultFileNames=new ArrayList<>();
         File directory = new File("/home/sindhy");
         String[] fileList = directory.list();
         if(fileList==null)
             return resultFileNames;
             for (String fileName : fileList) {
-                if (Pattern.matches(".local", fileName)) {
+
+                if (Pattern.matches(inputFileName, fileName)) {
                     File file = new File(fileName);
                     resultFileNames.add(file.getAbsolutePath());
                 }
